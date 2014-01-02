@@ -1,6 +1,6 @@
 ﻿NuttX 操作系统用户手册
 ============
-__By Gregory Nutt__
+__原作者：__By Gregory Nutt
 
 __Last Updated:__ September 28, 2013
 
