@@ -19,7 +19,7 @@ Last Updated: September 28, 2013
 * 部分3.0，操作系统数据结构：本节介绍了在NuttX接口中使用的数据结构。
 
 ### 1.2 目标读者与使用范围
-目标读者是在NuttX上开发应用的固件开发者。具体来说，这个文档只是在说明应用开发者可以使用的NuttX实时操作系统的API。因此，这个文档并没有集中在NuttX的组织或实现的任何技术细节。那些技术细节在NuttX Porting Guide中提供。应用开发者也需要关于配置和编译NuttX的信息。那些信息也可以在[NuttX  Porting  Guide](http://nuttx.org/Documentation/NuttxPortingGuide.html)中找到。
+目标读者是在NuttX上开发应用的固件开发者。具体来说，这个文档只是在说明应用开发者可以使用的NuttX实时操作系统的API。因此，这个文档并没有集中在NuttX的组织或实现的任何技术细节。那些技术细节在[NuttX Porting Guide](http://nuttx.org/Documentation/NuttxPortingGuide.html)中提供。应用开发者也需要关于配置和编译NuttX的信息。那些信息也可以在[NuttX  Porting  Guide](http://nuttx.org/Documentation/NuttxPortingGuide.html)中找到。
 
 2.0 操作系统接口
 ----------------
