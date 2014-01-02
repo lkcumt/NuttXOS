@@ -1,12 +1,12 @@
 ﻿NuttX 操作系统用户手册
 ============
-By Gregory Nutt
+__By Gregory Nutt__
 
-Last Updated: September 28, 2013
+__Last Updated:__ September 28, 2013
 
-翻译：cumtlk
+__翻译：__cumtlk
 
-版本：V1.0
+__版本：__V1.0
 
 1.0 介绍
 -------------
@@ -14,9 +14,9 @@ Last Updated: September 28, 2013
 本文档从固件开者的角度提供了NuttX 实时操作系统一般的使用信息。
 ### 1.1 文档概述
 本用户手册分为三个部分，外加一个索引：
-* 部分1.0，介绍：本节提供了NuttX用户手册的概述。
-* 部分2.0，操作系统接口：本节详细介绍了NuttX提供的程序接口。本节被划分为几个段落来描述操作系统接口的不同部分。
-* 部分3.0，操作系统数据结构：本节介绍了在NuttX接口中使用的数据结构。
+* __部分1.0，介绍：__本节提供了NuttX用户手册的概述。
+* __部分2.0，操作系统接口：__本节详细介绍了NuttX提供的程序接口。本节被划分为几个段落来描述操作系统接口的不同部分。
+* __部分3.0，操作系统数据结构：__本节介绍了在NuttX接口中使用的数据结构。
 
 ### 1.2 目标读者与使用范围
 目标读者是在NuttX上开发应用的固件开发者。具体来说，这个文档只是在说明应用开发者可以使用的NuttX实时操作系统的API。因此，这个文档并没有集中在NuttX的组织或实现的任何技术细节。那些技术细节在[NuttX Porting Guide](http://nuttx.org/Documentation/NuttxPortingGuide.html)中提供。应用开发者也需要关于配置和编译NuttX的信息。那些信息也可以在[NuttX  Porting  Guide](http://nuttx.org/Documentation/NuttxPortingGuide.html)中找到。
