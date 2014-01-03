@@ -114,7 +114,7 @@ __输入参数：__
 
 __返回值：__
 
-* 返回新任务的非零任务ID，或者返回ERROR,如果内存不足或者任务无法创建(错误没有设置)。
+* 返回新任务的非零任务ID，或者返回ERROR，如果内存不足或者任务无法创建(错误没有设置)。
 
 __假设/限制：__
 
@@ -126,10 +126,21 @@ __POSIX 兼容性：__这是个NON-POSIX接口。VxWorks提供下面相似的接
 
 NuttX的task_create()与VxWorks的taskSpawn()不同，主要有一下几点：
 
-* 接口名字
-* 参数类型不同
-* 没有可选的参数
-* 很多参数可以传给一个任务（VxWorks 支持10个）
+* 接口名字。
+* 参数类型不同。
+* 没有任何选项参数。
+* 很多参数可以传给一个任务（VxWorks 支持10个）。
 
 ## 2.1.2 task_init
+
+__函数原型：__
+	#include <sched.h>
+	int task_init(struct tcb_s *tcb, char *name, int priority, uint32_t *stack, uint32_t stack_size,
+	maint_t entry, char * const argv[]);
+
+__描述：__
+__输入参数：__
+__返回值：__
+__假设/限制：__
+__POSIX 兼容性：__
 
