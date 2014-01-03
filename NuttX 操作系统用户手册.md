@@ -37,7 +37,7 @@ __假设与限制：__通过接口函数产生的任何不寻常的假设或者�
 
 __POSIX相容性：__NuttX接口与它相应的POSIX接口之间的任何重要的差异都会在这里指出。
 
-注：为了实现NuttX接口函数的独立的名称空间，函数名和类型之间的差异可以预期的，在这些段落中不会被定义为差异。
+__注：__为了实现NuttX接口函数的独立的名称空间，函数名和类型之间的差异可以预期的，在这些段落中不会被定义为差异。
 ### 2.1 任务控制接口
 __任务：__NuttX是一个平面地址操作系统，因此，它不支持这样的进程，比如说linux中的方式。NuttX仅仅支持运行在相同地址空间的简单的线程。然而，编程模型使任务和pthreads之间有区别。
 * 任务是具有一定程度独立性的线程。
@@ -54,4 +54,48 @@ __执行文件系统中的程序：__NuttX还为驻留在文件系统单独建�
 __任务控制接口：__下面的任务控制接口就是由NuttX提供的：
 
 灵感来自于VxWorks接口非标准任务控制接口：
+
+* 2.1.1 task_create
+* 2.1.2 task_init
+* 2.1.3 task_activate
+* 2.1.4 task_delete
+* 2.1.5 task_restart
+
+标准接口：
+
+* 2.1.6 exit
+* 2.1.7 getpid
+
+标准的vfork和exec[v|1]接口：
+
+* 2.1.8 vfork
+* 2.1.9 execv
+* 2.1.10 execl
+
+标准的posix_spawn 接口：
+
+* 2.1.11 posix_spawn and posix_spawnp
+* 2.1.12 posix_spawn_file_actions_init
+* 2.1.13 posix_spawn_file_actions_destroy
+* 2.1.14 posix_spawn_file_actions_addclose
+* 2.1.15 posix_spawn_file_actions_adddup2
+* 2.1.16 posix_spawn_file_actions_addopen
+* 2.1.17 posix_spawnattr_init
+* 2.1.18 posix_spawnattr_getflags
+* 2.1.19 posix_spawnattr_getschedparam
+* 2.1.20 posix_spawnattr_getschedpolicy
+* 2.1.21 posix_spawnattr_getsigmask
+* 2.1.22 posix_spawnattr_setflags
+* 2.1.23 posix_spawnattr_setschedparam
+* 2.1.24 posix_spawnattr_setschedpolicy
+* 2.1.25 posix_spawnattr_setsigmask
+
+灵感来自于posix_spawn的非标准任务控制接口：
+
+* 2.1.26 task_spawn
+* 2.1.27 task_spawnattr_getstacksize
+* 2.1.28 task_spawnattr_setstacksize
+
+### 2.1.1 task_create
+
 
