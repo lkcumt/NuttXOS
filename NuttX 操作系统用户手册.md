@@ -106,10 +106,10 @@ __函数原型：__
 __描述：__该函数创建和激活一个新的任务，该任务带有一个指定的优先级，返回系统赋予的ID。入口地址的入口是任务的“main”函数的地址。一旦c环境被建立了，该函数就会被调用。指定的函数将会被调用，并带有四个参数。指定的路径返回，exit()的调用将会自动进行。
 
 __输入参数：__
-* name. Name of the new task
-* priority. Priority of the new task
-* stack_size. size (in bytes) of the stack needed
-* entry. Entry point of a new task
+* name. 新任务的名字
+* priority. 新任务的优先级
+* stack_size. 需要的栈的大小（字节）
+* entry. 新任务的入口点Entry point of a new task
 * argv. A pointer to an array of input parameters. Up to CONFIG_MAX_TASK_ARG parameters may be provided. If fewer than CONFIG_MAX_TASK_ARG parameters are passed, the list should be terminated with a NULL argv[] value. If no parameters are required, argv may be NULL. 
 
 __返回值：__
@@ -120,8 +120,8 @@ __假设/限制：__
 
 __POSIX 兼容性：__这是个NON-POSIX接口。VxWorks提供下面相似的接口：
 	int taskSpawn(char *name, int priority, int options, int stackSize, FUNCPTR entryPt,
-		int arg1, int arg2, int arg3, int arg4, int arg5,
-		int arg6, int arg7, int arg8, int arg9, int arg10);
+	int arg1, int arg2, int arg3, int arg4, int arg5,
+	int arg6, int arg7, int arg8, int arg9, int arg10);
 
 NuttX的task_create()与VxWorks的taskSpawn()不同，主要有一下几点：
 
