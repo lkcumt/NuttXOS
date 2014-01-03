@@ -140,8 +140,40 @@ __函数原型：__
 	maint_t entry, char * const argv[]);
 
 __描述：__
-__输入参数：__
-__返回值：__
-__假设/限制：__
-__POSIX 兼容性：__
 
+该函数初始化一个任务控制块（TCB），准备开始一个新的线程。它执行task_create()功能上的一个子集（见上文）。
+
+不像task_create()，task_init()不会激活任务。任务的激活必须通过调用task_activate()。
+
+__输入参数：__
+
+* tcb. 新任务TCB的地址。Address of the new task's TCB
+* name. 新任务的名字（未使用）。Name of the new task (not used)
+* priority. 新任务的优先级。Priority of the new task
+* stack. 预分配的栈的开始。Start of the pre-allocated stack
+* stack_size. 预分配的栈的大小（字节）。size (in bytes) of the pre-allocated stack
+* entry. 新任务的入口点。Entry point of a new task
+* argv. 指向输入参数的数组的指针。最多可以提供CONFIG_MAX_TASK_ARG个参数。如果传递的参数少于CONFIG_MAX_TASK_ARG，参数列表应以NULL argv[]值被终止，如果不需要参数，argv可以为NULL。
+
+__返回值：__
+
+* OK，或者ERROR，如果任务不能被初始化。
+
+这个函数仅当它不能分配一个新的、唯一的任务ID给TCB时（错误没有设置），会失败。
+
+__假设/限制：__
+
+* 提供task_init()来支持内部操作系统的功能。不推荐正常使用时用它。task_create()是初始化和开始一个新任务的首选机制。
+ 
+__POSIX 兼容性：__这是NON-POSIX的接口。VxWorks提供以下相似的接口：
+
+	STATUS taskInit(WIND_TCB *pTcb, char *name, int priority, int options, uint32_t *pStackBase, int stackSize, FUNCPTR entryPt, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10);
+
+NuttX task_init()与VxWorks的taskInit()有以下几点不同：
+
+* 接口名字。
+* 参数类型或者参数不同。
+* 没有选项参数。
+* 很多参数可以被传给一个任务（VxWorks 支持10）。
+
+### 2.1.3 task_activate
