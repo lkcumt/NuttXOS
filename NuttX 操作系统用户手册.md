@@ -134,6 +134,7 @@ NuttX的task_create()与VxWorks的taskSpawn()不同，主要有一下几点：
 ## 2.1.2 task_init
 
 __函数原型：__
+
 	#include <sched.h>
 	int task_init(struct tcb_s *tcb, char *name, int priority, uint32_t *stack, uint32_t stack_size,
 	maint_t entry, char * const argv[]);
