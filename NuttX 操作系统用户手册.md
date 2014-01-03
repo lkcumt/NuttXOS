@@ -167,7 +167,9 @@ __假设/限制：__
  
 __POSIX 兼容性：__这是NON-POSIX的接口。VxWorks提供以下相似的接口：
 
-	STATUS taskInit(WIND_TCB *pTcb, char *name, int priority, int options, uint32_t *pStackBase, int stackSize, FUNCPTR entryPt, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10);
+	STATUS taskInit(WIND_TCB *pTcb, char *name, int priority, int options, uint32_t *pStackBase, int stackSize, 
+	FUNCPTR entryPt, int arg1, int arg2, int arg3, int arg4, int arg5, 
+	int arg6, int arg7, int arg8, int arg9, int arg10);
 
 NuttX task_init()与VxWorks的taskInit()有以下几点不同：
 
