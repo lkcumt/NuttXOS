@@ -98,4 +98,10 @@ __任务控制接口：__下面的任务控制接口就是由NuttX提供的：
 
 ### 2.1.1 task_create
 
+__函数原型：__
+
+	#include <sched.h>
+	int task_create(char *name, int priority, int stack_size, main_t entry, char * const argv[]);
+
+__描述：__该函数创建和激活一个新的任务，该任务带有一个指定的优先级，返回系统赋予的ID。入口地址的入口是任务的“main”函数的地址。一旦c环境被建立了，该函数就会被调用。指定的函数将会被调用，并带有四个参数。指定的路径返回，exit()的调用将会自动进行。
 
