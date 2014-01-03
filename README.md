@@ -11,5 +11,5 @@ NuttX OS 是一个实时的嵌入式（RTOS），它有一个小巧的在微控�
 
 __格式：__
 
-采用github的md文件的格式。TUIDE.md在此：https://github.com/NetEase/example/blob/master/GUIDE.md。
+采用github的md文件的格式。GUIDE.md在此：https://github.com/NetEase/example/blob/master/GUIDE.md。
 md文件格式在此：https://raw.github.com/NetEase/example/master/doc/markdown-basics.md。
