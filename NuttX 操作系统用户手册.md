@@ -246,6 +246,37 @@ NuttX的task_restart()与VxWorks的taskRestart()有以下不同：
 
 ## 2.1.6 exit
 
+__函数原型：__
+
+	#include <sched.h>
+	void exit(int code);
+	
+	#include <nuttx/unistd.h>
+	void _exit(int code);
+
+__描述：__该函数使调用函数退出--它的栈和TCB将会被释放。exit 会冲洗流、关闭文件描述符，并且执行任何用atexit()或者on_exit()注册的函数，这是exit与_exit不同的地方。
+
+__输入参数：__
+
+* code. （忽略）。
+
+__返回值：__没有返回值。
+
+__假设/限制：__
+
+__POSIX 兼容性：__与ANSI接口等价。
+
+	void exit(int code);
+
+UNIX接口：
+
+	void _exit(int code);
+
+NUttX exit()与ANSI exit()有以下不同：
+
+* code参数被忽略。
+
+### 2.1.7 getpid
 
 
 
