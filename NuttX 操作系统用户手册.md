@@ -180,6 +180,34 @@ NuttX task_init()与VxWorks的taskInit()有以下几点不同：
 
 ### 2.1.3 task_activate
 
+__函数原型：__
+
+	#include <sched.h>
+	int task_activate(struct tcb_s *tcb);
+
+__描述：__该函数激活被task_init()创建的任务。没有激活，一个任务不会被调度执行。
+
+__输入参数：__
+
+* tcb. 任务的TCB（与task_init 参数相同）。
+
+__返回值：__
+
+* OK，或者ERROR，如果任务不能被激活（errno 不被设置）。
+
+__假设/限制：__
+
+* 提供task_activate()是来支持内部OS功能。不推荐正常使用。task_create()是推荐的初始化和开始一个新任务的机制。  
+
+__POSIX 兼容性：__这是NON-POSIX接口。VxWorks提供以下类似的接口：
+
+	STATUS taskActivate(int tid);
+
+NuttX task_activate()与VxWorks的taskActivate()有以下不同：
+
+* 函数名字
+* VxWorks的taskActivate，pid参数应该指向WIND_TCB强制转化为整数。
+
 ### 2.1.4 task_delete
 
 __函数原型：__
@@ -233,7 +261,7 @@ __输入参数：__
 
 __返回值：__
 
-* OK，或者ERROR，如果任务ID非法或者任务不能被重新启动。该函数会失如果：(1)PID为0或者调用任务的pid被提供（功能未实现）；（2）pid不与任何系统已知的任务相关联。
+* OK，或者ERROR，如果任务ID非法或者任务不能被重新启动。该函数会失如果：（1）PID为0或者调用任务的pid被提供（功能未实现）；（2）pid不与任何系统已知的任务相关联。
 
 __假设/限制：__
 
@@ -280,5 +308,22 @@ NUttX exit()与ANSI exit()有以下不同：
 
 ### 2.1.7 getpid
 
+__函数原型：__
 
+	#include <unistd.h>
+	pid_t getpid(void);
+
+__描述：__该函数返回调用任务的任务ID.如果在中断级别调用，任务ID将会无效。
+
+__输入参数：__无。
+
+__返回值：__
+
+* 调用任务的任务ID。
+
+__假设/限制：__
+
+__POSIX 兼容性：__兼容POSIX接口，名字相同。
+
+### 2.1.8 vfork
 
