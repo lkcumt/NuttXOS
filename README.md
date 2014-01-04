@@ -15,4 +15,5 @@ __格式：__
 md文件格式在此：https://raw.github.com/NetEase/example/master/doc/markdown-basics.md。
 
 __更新说明：__
+
 2014-01-03 前面的翻译都是所有文字全部翻译。发现一个人很费时间，后面的翻译准备改变一点策略。翻译的时候，只翻译重要的地方。
