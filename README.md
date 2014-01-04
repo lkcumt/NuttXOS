@@ -13,3 +13,6 @@ __格式：__
 
 采用github的md文件的格式。GUIDE.md在此：https://github.com/NetEase/example/blob/master/GUIDE.md。
 md文件格式在此：https://raw.github.com/NetEase/example/master/doc/markdown-basics.md。
+
+更新说明：
+2014-01-03 前面的翻译都是所有文字全部翻译。发现一个人很费时间，后面的翻译准备改变一点策略。翻译的时候，只翻译重要的地方。
