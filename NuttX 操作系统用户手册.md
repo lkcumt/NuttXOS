@@ -327,3 +327,59 @@ __POSIX 兼容性：__兼容POSIX接口，名字相同。
 
 ### 2.1.8 vfork
 
+	#include <unistd.h>
+	pid_t vfork(void);
+
+__返回值：__一旦成功完成，vfork()返回0给子进程，并且返回子进程的进程ID给父进程。否则，返回-1给父进程，无子进程创建，errno被设置表示这个错误。
+
+### 2.1.9 execv
+
+	#include <unistd.h>
+	#ifdef CONFIG_LIBC_EXECFUNCS
+	int execv(FAR const char *path, FAR char *const argv[]);
+	#endif
+__描述：__NuttX不支持进程，这个函数蛮复杂的，具体用到的话，看英文详细解释吧。。
+
+__输入参数：__
+
+* path: 被执行的程序的路径。如果CONFIG_BINFMT_EXEPATH在配置中被定义了，那么这可能是一个相对的路径，相对于当前工作目录。否则，path必须是绝对路径。
+* argv: 指针数组，数组元素是指针，指针指向字符串参数。数组结尾以NULL结束。
+
+### 2.1.10 execl
+
+	#include <unistd.h>
+	#ifdef CONFIG_LIBC_EXECFUNCS
+	int execl(FAR const char *path, ...);
+	#endif
+__描述：__功能类似execv()，都是exce家族的，用到的话看英文详细。
+
+__输入参数：__
+
+* path：路径。如果CONFIG_BINFMT_EXEPATH在配置中定义，则是相对路径。否则，path是绝对路径。
+* ...:程序接收的string参数列表。0表示列表的末尾。
+
+__返回值：__不会成功返回的。失败的话，会返回-1并且会设置errno值。
+
+### 2.1.11 posix_spawn and posix_spawnp
+
+	#include <spawn.h>
+	int posix_spawn(FAR pid_t *pid, FAR const char *path,
+	FAR const posix_spawn_file_actions_t *file_actions,
+	FAR const posix_spawnattr_t *attr,
+	FAR char *const argv[], FAR char *const envp[]);
+	int posix_spawnp(FAR pid_t *pid, FAR const char *file,
+	FAR const posix_spawn_file_actions_t *file_actions,
+	FAR const posix_spawnattr_t *attr,
+	FAR char *const argv[], FAR char *const envp[]);
+__描述：__这两个函数将创建一个新的有普通可执行文件创建的孩子任务。
+
+__输入参数：__
+
+* pid:
+* path or file:
+* file_actions:
+* attr:
+* argv:
+* envp:
+
+__返回值：__
