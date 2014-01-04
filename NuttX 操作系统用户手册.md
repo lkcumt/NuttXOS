@@ -180,6 +180,8 @@ NuttX task_init()与VxWorks的taskInit()有以下几点不同：
 
 ### 2.1.3 task_activate
 
+### 2.1.4 task_delete
+
 __函数原型：__
 
 	#include <sched.h>
@@ -210,7 +212,7 @@ NuttX的task_delete()与VxWorks的taskDelete()有以下不同点：
 * 不支持提供任务删除程序（因为VxWorks taskDeleteHookAdd()不支持）。然而，如果atexit()或者on_exit支持使能了，当任务删除的时候，那些将会被调用。
 * 支持删除自己，仅仅因为task_delete()将重新直接处理到exit()。
 
-### task_restart
+### 2.1.5 task_restart
 
 __函数原型：__
 
